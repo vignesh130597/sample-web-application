@@ -1,0 +1,23 @@
+node{
+    
+    def mavenHome = tool name: "Maven3.6.2"
+    
+    stage('checkOutCode'){
+        git credentialsId: '27f800d6-0dce-460f-8a74-7226e787be5e', url: 'https://github.com/vignesh130597/sample-web-application.git'
+    }
+    stage('buildPackages'){
+        sh "${mavenHome}/bin/mvn clean package"
+    }
+    stage('executeSonar'){
+        sh "${mavenHome}/bin/mvn sonar:sonar"
+    }
+    stage('deploytoNexus'){
+        sh "${mavenHome}/bin/mvn clean deploy"
+    }
+    stage('deploytoTomcat'){
+        sshagent(['d3e4fc7d-83b9-4f4b-bb73-6fad24f4c4ba']) {
+   sh "scp -o StrictHostKeyChecking=no target/WebApp.war ec2-user@3.109.158.125:/opt/apache-tomcat-9.0.53/webapps"
+    }
+        
+    }
+}
