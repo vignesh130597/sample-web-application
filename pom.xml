@@ -30,4 +30,10 @@
     </repository>
   
   </distributionManagement>
+	
+	<properties>
+		<sonar.host.url>http://13.235.79.86:9000/</sonar.host.url>
+		<sonar.login>7e0af24be6554442f00200e15b5880f8852485e1</sonar.login>
+		
+	</properties>
 </project>
