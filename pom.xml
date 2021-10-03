@@ -22,11 +22,13 @@
   <distributionManagement>
     <snapshotRepository>
       <id>nexusdeploymentrepo</id>
-      <url>http://35.193.34.53:8081/repository/maven-snapshots/</url>
+	    <name>maven-pipeline-git-snapshot</name>
+      <url>http://52.66.207.29:8082/repository/maven-pipeline-git-snapshot/</url>
     </snapshotRepository>
 	<repository>
 	  <id>nexusdeploymentrepo</id>
-      <url>http://35.193.34.53:8081/repository/maven-releases/</url>
+		 <name>maven-pipeline-git-release</name>
+      <url>http://52.66.207.29:8082/repository/maven-pipeline-git/</url>
     </repository>
   
   </distributionManagement>
