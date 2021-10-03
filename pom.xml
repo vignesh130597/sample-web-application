@@ -33,7 +33,7 @@
 	
 	<properties>
 		<sonar.host.url>http://13.235.79.86:9000/</sonar.host.url>
-		<sonar.login>7e0af24be6554442f00200e15b5880f8852485e1</sonar.login>
+		<sonar.login>462bd4a6bf536ec068deadc3a0100c1a79d185bb</sonar.login>
 		
 	</properties>
 </project>
